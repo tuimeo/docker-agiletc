@@ -1,0 +1,32 @@
+version: '3'
+services:
+  agiletc:
+    image: tuimeo/agliec-tc:latest
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/case_manager?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+      - WEB_UPLOADPATH=/app/uploads
+      - TZ=Asia/Shanghai
+    # docker 端口映射,如果宿主机 8080 端口被占用需要更改
+    ports:
+      - "8080:8094"
+    volumes:
+      - ./data/uploads:/app/uploads
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: always
+  mysql:
+    image: mysql:5.7
+    platform: linux/amd64
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./case-server.sql:/docker-entrypoint-initdb.d/init_agiletc.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_DATABASE=case_manager
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost",'-u', 'root', '-proot']
+      timeout: 5s
+      retries: 10
