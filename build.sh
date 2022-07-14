@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t tuimeo/agile-tc:latest .
+docker build --platform linux/amd64 -t tuimeo/agile-tc:latest .
