@@ -6,9 +6,9 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/case_manager?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
       - WEB_UPLOADPATH=/app/uploads
       - TZ=Asia/Shanghai
-    # docker 端口映射,如果宿主机 8080 端口被占用需要更改
     ports:
-      - "8080:8094"
+      - "8094:8094"
+      - "8095:8095"
     volumes:
       - ./data/uploads:/app/uploads
     depends_on:
