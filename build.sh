@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t tuimeo/aglie-tc:latest .
+docker build -t tuimeo/agile-tc:latest .

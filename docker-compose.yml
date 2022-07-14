@@ -1,7 +1,7 @@
 version: '3'
 services:
   agiletc:
-    image: tuimeo/aglie-tc:latest
+    image: tuimeo/agile-tc:latest
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/case_manager?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
       - WEB_UPLOADPATH=/app/uploads
