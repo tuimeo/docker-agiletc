@@ -16,3 +16,5 @@ Simple docker project to build docker image for AgileTC(https://github.com/didi/
 ### 构建镜像
 
 譬如说，你魔改过AgileTC，又或者需要用不同的版本的，就需要自己构建了，我们也提供了构建脚本和Dockerfile。首先，我们用了git submodule，所以AgileTC目录总是指向我们指定的commit。你可以在里面魔改，切分支/commit等。然后执行`./build.sh`,就会build了。
+
+**记得先做`git submodule init`, `git submodule update`，拉下AgileTC的代码。**
