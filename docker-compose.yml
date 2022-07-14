@@ -4,7 +4,7 @@ services:
     image: tuimeo/agile-tc:latest
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/case_manager?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
-      - WEB_UPLOADPATH=/app/uploads
+      - WEB_UPLOADPATH=/app/uploads/
       - TZ=Asia/Shanghai
     ports:
       - "8094:8094"
