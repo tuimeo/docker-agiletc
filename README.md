@@ -11,7 +11,7 @@ Simple docker project to build docker image for AgileTC(https://github.com/didi/
 1. 创建一个新目录，用于放配置、数据库文件等
 2. 把`docker-compose.yml`和`case-server.sql`拷贝到这个目录内
 3. 在目录内，准备好数据目录。`mkdir -p data/mysql`和`mkdir -p data/uploads`
-4. `docker-compose up -d`就拉起了，首次创建数据库的时候，会自动从case-server.sql这里创建表。如果你有老数据要转移的话，可以dump出来，塞到这个sql里面，就可以比较方便转移到docker环境。
+4. `docker-compose up -d`就拉起了。首次创建数据库的时候，会自动从case-server.sql这里创建表（走的mysql镜像的初始化功能）。如果你有老数据要转移的话，可以dump出来，塞到这个sql里面，就可以比较方便转移到docker环境。
 
 ### 构建镜像
 
